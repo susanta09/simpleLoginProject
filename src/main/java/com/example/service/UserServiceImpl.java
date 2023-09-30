@@ -1,5 +1,7 @@
 package com.example.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,7 +20,7 @@ public class UserServiceImpl {
 	public boolean verifyPassworAndName(LoginObject user)
 	{
 		String name=userRepository.getNameByNameAndPassword(user.getName(),user.getPassword());
-		if(name.equals(user.getName()))
+		if(name!=null&&name.equals(user.getName()))
 		{
 			return true;
 		}
@@ -27,4 +29,8 @@ public class UserServiceImpl {
 		}
 	}
 
+	public List<User> getAllUser()
+	{
+		return userRepository.findAll();
+	}
 }

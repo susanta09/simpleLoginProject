@@ -10,7 +10,7 @@
 <body>
 <div>
 <h1>Registration Form</h1>
-    ${msg}
+    <h4 style="color: green;">${msg} </h4>
 	<form:form action="save" modelAttribute="user" method="post">
 		<table>
 			<tr>

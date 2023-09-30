@@ -1,5 +1,7 @@
 package com.example.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -44,9 +46,29 @@ public class UserController {
 	@PostMapping("login")
 	public String login(@ModelAttribute("log") LoginObject loginObject,Model model)
 	{
-		System.out.println(loginObject.getName());
-		serviceImpl.verifyPassworAndName(loginObject);
-		model.addAttribute("name", loginObject.getName());
-		return "success";
+		System.out.println("ty"+loginObject.getName());
+		System.out.println("rama");
+		LoginObject log=new LoginObject();
+		if(loginObject.getName()!=""&&loginObject.getPassword()!="")
+		{
+			boolean b=serviceImpl.verifyPassworAndName(loginObject);
+			if(b)
+			{
+				model.addAttribute("name",loginObject.getName() );
+				List<User> users=serviceImpl.getAllUser();
+				model.addAttribute("users",users );
+				return "succ";
+			}else {
+				model.addAttribute("log", log);
+				model.addAttribute("msg","Login is fail..Please sing up" );
+				return"login";
+			}
+		}else {
+			model.addAttribute("log", log);
+			model.addAttribute("msg","plese enter your name and password" );
+			return"login";
+		}
+		
+	
 	}
 }

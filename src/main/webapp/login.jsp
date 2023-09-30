@@ -10,6 +10,10 @@
 <body>
 <div>
 <h1>Login Form</h1>
+<div>
+<div>
+   <h4 style="color: red;">${msg} </h4>
+</div>
 <form:form action="login" modelAttribute="log" method="post">
 		<table>
 			<tr>
@@ -26,6 +30,7 @@
 			</tr>
 		</table>
 	</form:form>
+	</div>
 	</div>
 	<div>
 	<a href="/reg">Sing up</a>
