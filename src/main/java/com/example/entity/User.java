@@ -2,10 +2,14 @@ package com.example.entity;
 
 import java.time.LocalDate;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
+
 @Entity
 public class User {
 	@Id
@@ -13,6 +17,7 @@ public class User {
 	private Integer id;
 	private String name;
 	private String gender;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate dob;
 	private String password;
 	private String state;

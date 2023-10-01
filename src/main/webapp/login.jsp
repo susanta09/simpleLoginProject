@@ -18,11 +18,11 @@
 		<table>
 			<tr>
 				<td><form:label path="name">Enter The name:</form:label></td>
-				<td><form:input path="name" /></td>
+				<td><form:input path="name" required="required"/></td>
 			</tr>
 			<tr>
 				<td><form:label path="password">Enter The Password:</form:label></td>
-				<td><form:input path="password" /></td>
+				<td><form:input path="password" required="required"/></td>
 			</tr>
 			<tr>
 				<td></td>

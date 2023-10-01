@@ -60,7 +60,7 @@ public class UserController {
 				return "succ";
 			}else {
 				model.addAttribute("log", log);
-				model.addAttribute("msg","Login is fail..Please sing up" );
+				model.addAttribute("msg","Login is fail..Please sing up or enter correct name and password" );
 				return"login";
 			}
 		}else {

@@ -9,8 +9,8 @@
 </head>
 <body>
 <h1>Welcome ${name}</h1>
-	<table style="border: 1 solid;">
-		<tr>
+	<table border="2px" style="border-collapse: collapse;">
+		<tr >
 			<th>ID</th>
 			<th>Name</th>
 			<th>Gender</th>
